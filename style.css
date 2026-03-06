@@ -1,0 +1,206 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--input-height: 3.6rem;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	font-family: "Outfit", sans-serif;
+	color: #f3f3f3;
+	background:
+		radial-gradient(circle at 50% -12%, #1f1f1f 0, #050505 50%, #000 100%);
+}
+
+.app {
+	width: min(100%, 980px);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 4.6rem;
+	padding: 2.5rem 1.25rem;
+}
+
+.logo-box {
+	width: fit-content;
+	min-width: min(430px, 100%);
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 0.5rem 1.25rem 0.6rem;
+	margin-inline: auto;
+}
+
+.logo-dice {
+	width: clamp(185px, 24vw, 260px);
+	height: auto;
+	display: block;
+	margin: 0.1rem auto 0.2rem;
+}
+
+.logo-title {
+	margin: 0;
+	width: max-content;
+	max-width: 100%;
+	font-family: "Manrope", sans-serif;
+	font-size: clamp(2.4rem, 6.1vw, 5rem);
+	font-weight: 800;
+	line-height: 0.95;
+	color: #efefef;
+}
+
+.draw-card {
+	width: min(720px, 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-inline: auto;
+}
+
+.draw-label {
+	margin: 0 0 0.85rem;
+	font-size: clamp(1.3rem, 2.2vw, 2rem);
+	color: #ececec;
+}
+
+.range-inputs {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.7rem;
+}
+
+.range-inputs input {
+	flex: 1 1 0;
+	max-width: 350px;
+	height: var(--input-height);
+	min-height: var(--input-height);
+	border: none;
+	border-radius: 13px;
+	appearance: none;
+	-webkit-appearance: none;
+	background: #434343;
+	color: #f5f5f5;
+	font-family: "Manrope", sans-serif;
+	font-size: clamp(1.28rem, 2.6vw, 2rem);
+	font-weight: 700;
+	padding: 0 1rem;
+	outline: none;
+}
+
+.range-inputs input::placeholder {
+	color: #cecece;
+}
+
+.range-inputs input:focus {
+	box-shadow: 0 0 0 2px #7abf38;
+}
+
+.draw-button {
+	margin-top: 3rem;
+	width: min(236px, 100%);
+	height: 3.2rem;
+	border: none;
+	border-radius: 9px;
+	cursor: pointer;
+	font-family: "Manrope", sans-serif;
+	font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+	font-weight: 800;
+	color: #f2f2f2;
+	background: linear-gradient(180deg, #46c570, #13331a);
+	box-shadow: 0 0 22px rgba(255, 255, 255, 0.42), 0 8px 20px rgba(0, 0, 0, 0.45);
+	transition: transform 160ms ease, box-shadow 220ms ease;
+}
+
+.draw-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.draw-button:active {
+	transform: translateY(0);
+}
+
+.result-box {
+	margin-top: 0.65rem;
+	width: min(150px, 100%);
+	height: 3.2rem;
+	border-radius: 13px;
+	background: #434343;
+	color: #f5f5f5;
+	font-family: "Manrope", sans-serif;
+	font-size: 1.55rem;
+	font-weight: 800;
+	display: grid;
+	place-items: center;
+	letter-spacing: 0.02em;
+}
+
+.result-label {
+	margin: 3rem 0 0;
+	font-family: "Manrope", sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: #d8d8d8;
+	letter-spacing: 0.01em;
+}
+
+.input-min, .input-max {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	padding: 0;
+}
+
+@media (max-width: 800px) {
+	.app {
+		justify-content: center;
+		gap: 3rem;
+		padding: 1.7rem 1rem;
+	}
+
+	.logo-box {
+		padding-inline: 0.7rem;
+	}
+
+	.range-inputs {
+		width: 100%;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.range-inputs input {
+		max-width: 100%;
+		width: 100%;
+		height: 4rem !important;
+		min-height: 4rem !important;
+	}
+
+	.draw-button {
+		margin-top: 2.2rem;
+	}
+
+	.result-box {
+		margin-top: 0.65rem;
+		height: 4rem;
+	}
+
+	.result-label {
+		margin-top: 2.2rem;
+	}
+}
