@@ -21,15 +21,25 @@
 
             <div class="range-inputs">
                 <label class="input-min" for="min">Valor inicial</label>
-                <input id="min" type="number" placeholder="entre" inputmode="numeric">
+                <input id="min" type="number" placeholder="valor mínimo" inputmode="numeric">
 
                 <label class="input-max" for="max">Valor final</label>
-                <input id="max" type="number" placeholder="e" inputmode="numeric">
+                <input id="max" type="number" placeholder="valor máximo" inputmode="numeric">
+            </div>
+
+            <div class="no-repeat-option">
+                <input id="no-repeat" type="checkbox">
+                <label for="no-repeat">Não repetir números</label>
             </div>
 
             <button onclick="generateNumber()" class="draw-button" type="button">Sortear</button>
             <p class="result-label">Resultado</p>
             <output id="result-box" class="result-box" aria-live="polite">-</output>
+                    <div id="results-history-container">
+                        <p class="history-label">Resultados sorteados</p>
+                        <output id="results-history" class="results-history"></output>
+                        <button id="clear-history" class="clear-history" type="button">Limpar resultados</button>
+                    </div>
         </section>
     </main>
 </body>
