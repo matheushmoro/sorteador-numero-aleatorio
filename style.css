@@ -146,10 +146,6 @@ body {
 	background: linear-gradient(180deg, #3cb163, #13331a);
 }	
 
-.draw-button:active {
-	transform: translateY(0);
-}
-
 .result-label {
 	margin: 10px 0;
 	font-family: "Manrope", sans-serif;
