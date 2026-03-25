@@ -116,6 +116,14 @@ body {
 	color: #e2e2e2;
 }
 
+#no-repeat {
+	accent-color: #46c570;
+}
+
+#no-repeat::-webkit-checkbox {
+	background-color: #46c570;
+}
+
 .draw-button {
 	margin-top: 0;
 	width: min(236px, 100%);
